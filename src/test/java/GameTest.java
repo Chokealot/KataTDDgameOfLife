@@ -8,7 +8,6 @@ import static org.junit.Assert.*;
 public class GameTest {
 
     Game game = new Game();
-
     int[][] fixed25by25 = new int[25][25];
 
     @Test
@@ -20,14 +19,17 @@ public class GameTest {
         assertEquals(0, game.grid[5][5]);
     }
     @Test
-
     public void shouldNotReturnOneFromIndividualCell() {
         assertNotEquals(1, game.grid[7][2]);
     }
     @Test
-    public void ShouldSetSpecificGridNodeToOneFromZer0() {
+    public void ShouldSetSpecificGridNodeToOneFromZero() {
         game.setSpecificNode(3,3);
         assertEquals(1, game.grid[3][3]);
     }
-
+    @Test
+    public void SpecificNodeShouldStillNotBeZero() {
+        game.setSpecificNode(7,7);
+        assertNotEquals(0, game.grid[7][7]);
+    }
 }
