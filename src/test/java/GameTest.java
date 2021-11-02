@@ -20,8 +20,14 @@ public class GameTest {
         assertEquals(0, game.grid[5][5]);
     }
     @Test
+
     public void shouldNotReturnOneFromIndividualCell() {
         assertNotEquals(1, game.grid[7][2]);
+    }
+    @Test
+    public void ShouldSetSpecificGridNodeToOneFromZer0() {
+        game.setSpecificNode(3,3);
+        assertEquals(1, game.grid[3][3]);
     }
 
 }
