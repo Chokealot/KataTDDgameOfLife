@@ -1,10 +1,18 @@
+import java.util.Scanner;
+
 public class Main {
 
-    public static void main(String[] args) {
+    static Scanner sc = new Scanner(System.in);
 
-        Game game = new Game(10,10);
+    public static void main(String[] args) throws InterruptedException {
+
+        System.out.println("Input height dimension: ");
+        int h = sc.nextInt();
+        System.out.println("Input width dimension: ");
+        int w = sc.nextInt();
+        Game game = new Game(h,w);
         game.createRandomGame();
         game.generateGameGrid();
+        while(true) { game.automaticGame(); }
     }
-
 }

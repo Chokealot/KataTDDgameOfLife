@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Game {
 
     private int gridHeight;
@@ -31,6 +33,14 @@ public class Game {
     public int[][] grid;
     public int[][] neighbors;
 
+    public void automaticGame() throws InterruptedException {
+        findLife();
+        death();
+        birth();
+        System.out.println();
+        generateGameGrid();
+        Thread.sleep(1000);
+    }
     public void death() {
         for (int y = 0; y < gridHeight; y++) {
             for (int x = 0; x < gridWidth; x++) {
