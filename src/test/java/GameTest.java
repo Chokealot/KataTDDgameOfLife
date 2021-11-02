@@ -1,4 +1,5 @@
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -9,6 +10,11 @@ public class GameTest {
 
     Game game = new Game(25,25);
     int[][] fixed25by25 = new int[25][25];
+
+    @Before
+    public void init() {
+        game.initializeGrid();
+    }
 
     @Test
     public void createEmptyGameGrid() {
