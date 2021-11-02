@@ -73,6 +73,15 @@ public class Game {
             System.out.println();
         }
     }
+    public void createRandomGame() {
+        for (int y=0; y < 25; y++) {
+            for (int x = 0; x < 25; x++) {
+                int rand = (int)(Math.random() * 2) + 0;
+                if (rand == 1) { grid[y][x] = 1; }
+                else { grid[y][x] = 0; }
+            }
+        }
+    }
     public void createEmptyGame() {
         for (int y=0; y < gridHeight; y++) {
             for (int x = 0; x < gridWidth; x++) {
