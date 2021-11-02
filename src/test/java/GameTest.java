@@ -32,5 +32,17 @@ public class GameTest {
         game.setSpecificNode(7,7);
         assertNotEquals(0, game.grid[7][7]);
     }
+    @Test
+    public void TestForFindLife() {
 
+    }
+    @Test
+    public void NodeOneByOneShouldStartToLive() {
+        game.setSpecificNode(0,0);
+        game.setSpecificNode(0,1);
+        game.setSpecificNode(1,0);
+        game.findLife();
+        game.birth();
+        assertEquals(1, game.grid[1][1]);
+    }
 }
