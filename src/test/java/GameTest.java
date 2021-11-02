@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class GameTest {
 
-    Game game = new Game();
+    Game game = new Game(25,25);
     int[][] fixed25by25 = new int[25][25];
 
     @Test

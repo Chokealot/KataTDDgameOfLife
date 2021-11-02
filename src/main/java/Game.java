@@ -1,8 +1,13 @@
 public class Game {
 
-    private int gridHeight = 25;
-    private int gridWidth = 25;
+    private int gridHeight;
+    private int gridWidth;
     private boolean endGame = false;
+
+    public Game(int gridHeight, int gridWidth) {
+        this.gridHeight = gridHeight;
+        this.gridWidth = gridWidth;
+    }
 
     public int getGridHeight() {
         return gridHeight;
@@ -23,8 +28,8 @@ public class Game {
         this.endGame = endGame;
     }
 
-    public int[][] grid = new int[gridHeight][gridWidth];
-    public int[][] neighbors = new int[gridHeight][gridWidth];
+    public int[][] grid;
+    public int[][] neighbors;
 
     public void death() {
         for (int y = 0; y < gridHeight; y++) {
@@ -74,8 +79,9 @@ public class Game {
         }
     }
     public void createRandomGame() {
-        for (int y=0; y < 25; y++) {
-            for (int x = 0; x < 25; x++) {
+        initializeGrid();
+        for (int y=0; y < gridHeight; y++) {
+            for (int x = 0; x < gridWidth; x++) {
                 int rand = (int)(Math.random() * 2) + 0;
                 if (rand == 1) { grid[y][x] = 1; }
                 else { grid[y][x] = 0; }
@@ -83,11 +89,16 @@ public class Game {
         }
     }
     public void createEmptyGame() {
+        initializeGrid();
         for (int y=0; y < gridHeight; y++) {
             for (int x = 0; x < gridWidth; x++) {
                 grid[y][x] = 0;
             }
         }
         System.out.println(grid);
+    }
+    public void initializeGrid() {
+        grid = new int[gridHeight][gridWidth];
+        neighbors = new int[gridHeight][gridWidth];
     }
 }
