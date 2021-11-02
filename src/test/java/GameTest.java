@@ -32,4 +32,5 @@ public class GameTest {
         game.setSpecificNode(7,7);
         assertNotEquals(0, game.grid[7][7]);
     }
+
 }
