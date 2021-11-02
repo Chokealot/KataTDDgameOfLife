@@ -45,4 +45,15 @@ public class GameTest {
         game.birth();
         assertEquals(1, game.grid[1][1]);
     }
+    @Test
+    public void NodeOneByOneShouldDieDueToOverpopulation() {
+        game.setSpecificNode(0,0);
+        game.setSpecificNode(0,1);
+        game.setSpecificNode(0,2);
+        game.setSpecificNode(1,0);
+        game.setSpecificNode(1,1);
+        game.findLife();
+        game.death();
+        assertEquals(0, game.grid[1][1]);
+    }
 }
