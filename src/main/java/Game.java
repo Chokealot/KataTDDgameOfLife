@@ -4,6 +4,7 @@ public class Game {
     private int gridWidth = 25;
 
     public int[][] grid = new int[gridHeight][gridWidth];
+    public int[][] neighbors = new int[gridHeight][gridWidth];
 
     public void generateGameGrid() {
         for (int y=0; y < gridHeight; y++) {
