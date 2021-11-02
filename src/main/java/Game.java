@@ -2,10 +2,29 @@ public class Game {
 
     private int gridHeight = 25;
     private int gridWidth = 25;
+    private boolean endGame = false;
+
+    public int getGridHeight() {
+        return gridHeight;
+    }
+    public void setGridHeight(int gridHeight) {
+        this.gridHeight = gridHeight;
+    }
+    public int getGridWidth() {
+        return gridWidth;
+    }
+    public void setGridWidth(int gridWidth) {
+        this.gridWidth = gridWidth;
+    }
+    public boolean isEndGame() {
+        return endGame;
+    }
+    public void setEndGame(boolean endGame) {
+        this.endGame = endGame;
+    }
 
     public int[][] grid = new int[gridHeight][gridWidth];
     public int[][] neighbors = new int[gridHeight][gridWidth];
-
 
     public void death() {
         for (int y = 0; y < gridHeight; y++) {
