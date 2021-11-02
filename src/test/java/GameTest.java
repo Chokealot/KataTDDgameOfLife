@@ -33,8 +33,12 @@ public class GameTest {
         assertNotEquals(0, game.grid[7][7]);
     }
     @Test
-    public void TestForFindLife() {
-
+    public void FindLifeTestWhereNodeZeroByOneShouldHaveTwoNeighbours() {
+        game.setSpecificNode(0,0);
+        game.setSpecificNode(0,1);
+        game.setSpecificNode(0,2);
+        game.findLife();
+        assertEquals(2, game.neighbors[0][1]);
     }
     @Test
     public void NodeOneByOneShouldStartToLive() {
